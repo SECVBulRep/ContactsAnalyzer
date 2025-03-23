@@ -1,5 +1,6 @@
 from pydantic import BaseModel
+from typing import List
 
 class ProcessRequest(BaseModel):
-    model: str
-    prompt: str
+    llm_type: str
+    display_names: List[str]

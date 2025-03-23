@@ -7,10 +7,9 @@ from web_api.services.llm_service import LLMService
 router = APIRouter()
 
 @router.post("/process", response_model=ProcessResponse)
-def process_llm(request: ProcessRequest, service: LLMService = Depends()):
-    result = service.process(request)
+async def process_llm(request: ProcessRequest, service: LLMService = Depends()):
+    result = await service.processAsync(request)
     return ProcessResponse(output=result)
-
 
 @router.post("/llm-list")
 def process_llm():
