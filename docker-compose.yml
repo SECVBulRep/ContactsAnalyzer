@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  fastapi-app:
+    build:
+      context: .
+    ports:
+      - "8010:8010"
+    environment:
+      - PYTHONPATH=/app/src
